@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int i,n;
+    printf("Numero de clientes? ");
+    scanf("%d",&n);
+    struct Conta {
+        int num_conta;
+        char tipo_conta;
+        char *nome;
+        float saldo;
+    }vcliente[n];
+    for(i=0;i<n;i++){
+        /*struct Conta vcliente = {i, 'E', "Jean Garibaldi", 10000-(i*2)};*/
+        vcliente[i].num_conta = i;
+        vcliente[i].tipo_conta = 'E';
+        vcliente[i].nome = "Marcelo";
+        vcliente[i].saldo = 10000-(i*5);
+    }
+    printf("\nImprime dados dos clientes");
+    printf("\nNro Cta Tipo Cta Nome Cliente Saldo Cta");
+    for (i=0; i<n; i++){
+        printf("\n%3d     %c        %s        %.2f", vcliente[i].num_conta, vcliente[i].tipo_conta, vcliente[i].nome, vcliente[i].saldo);
+     }
+}
