@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct {
+     int num;
+     char tipo;
+     char nome[80];
+     float saldo;
+     }Conta;
+
+void preenche(Conta *cliente){
+    scanf("%d",&cliente->num);
+    scanf("%c",&cliente->tipo);
+    scanf("%s",&cliente->nome);
+    scanf("%f",&cliente->saldo);
+}
+
+void mostra(Conta *cliente){
+    printf("%d",cliente->num);
+    printf("%c",cliente->tipo);
+    printf("%s",cliente->nome);
+    printf("%f",cliente->saldo);
+}
+
+int main(){
+     Conta cliente;
+     preenche(cliente);
+     mostra(cliente);
+}
