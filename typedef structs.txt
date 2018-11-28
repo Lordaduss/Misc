@@ -17,10 +17,17 @@ void preenche(Conta *cliente){
     scanf("%f",&cliente->saldo);
 }
 
+float reajuste(Conta *cliente){
+    float taxa;
+    scanf("%f",&taxa);
+    return(cliente.saldo+=(saldo*taxa)/100);
+}
+
 void mostra(Conta *cliente){
     printf("%d",cliente->num);
     printf("%c",cliente->tipo);
     printf("%s",cliente->nome);
+    printf("%f",cliente->saldo);
     printf("%f",cliente->saldo);
 }
 
@@ -28,5 +35,6 @@ int main(){
      Conta cliente;
 
      preenche(&cliente);
+     cliente.saldo=reajuste(&cliente);
      mostra(&cliente);
 }
