@@ -6,12 +6,14 @@ typedef struct {
      char tipo;
      char nome[80];
      float saldo;
-     }Conta;
+}Conta;
 
 void preenche(Conta *cliente){
     scanf("%d",&cliente->num);
     scanf("%c",&cliente->tipo);
+    fflush(stdin);
     scanf("%s",&cliente->nome);
+    fflush(stdin);
     scanf("%f",&cliente->saldo);
 }
 
@@ -24,6 +26,7 @@ void mostra(Conta *cliente){
 
 int main(){
      Conta cliente;
-     preenche(cliente);
-     mostra(cliente);
+
+     preenche(&cliente);
+     mostra(&cliente);
 }
