@@ -1,0 +1,51 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define N 5
+
+typedef struct{
+    int dia,mes,ano;
+}Data;
+
+typedef struct{
+    int qtd,id;
+    float preco;
+}Item;
+
+typedef struct{
+    int id;
+    Data data;
+    float preco;
+    Item item[N];
+    float total;
+}Pedido;
+
+void preenche(Pedido *pedido){
+    scanf("%d",&(*pedido).id);
+    scanf("%d",&(*pedido).data.dia);
+    scanf("%d",&(*pedido).data.mes);
+    scanf("%d",&(*pedido).data.ano);
+    scanf("%f",&(*pedido).preco);
+    scanf("%d",&(*pedido).item[0].id);
+    scanf("%d",&(*pedido).item[0].qtd);
+    scanf("%f",&(*pedido).item[0].preco);
+    scanf("%f",&(*pedido).total);
+}
+
+void mostra(Pedido *pedido){
+    printf("%d",(*pedido).id);
+    printf("%d",(*pedido).data.dia);
+    printf("%d",(*pedido).data.mes);
+    printf("%d",(*pedido).data.ano);
+    printf("%f",(*pedido).preco);
+    printf("%d",(*pedido).item[0].id);
+    printf("%d",(*pedido).item[0].qtd);
+    printf("%f",(*pedido).item[0].preco);
+    printf("%f",(*pedido).total);
+}
+
+int main(){
+    Pedido pedido;
+
+    preenche(&pedido);
+    mostra(&pedido);
+}
